@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "plink-ng"
+version = "0.1.0"
+description = ""
+authors = ["milescsmith <mileschristiansmith@gmail.com>"]
+license = "GPL-3"
+
+[tool.poetry.dependencies]
+python = ">=3.8.3,<4.0"
+Cython = "^0.29.28"
+numpy = "^1.22.2"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+isort = "^5.10.1"
+mypy = "^0.931"
+flake8 = "^4.0.1"
+pylint = "^2.12.2"
+jupyterlab = "^3.2.9"
+ipython = "^8.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
