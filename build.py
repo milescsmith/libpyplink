@@ -12,16 +12,16 @@ from Cython.Build import cythonize
 
 extensions = [
     Extension(
-        "pgenlib",
+        "plink_ng.pgenlib",
         include_dirs=[np.get_include()],
         sources=[
-            'src/plink-ng/pgenlib.pyx',
-            'src/plink-ng/c/pgenlib_ffi_support.cc',
-            'src/plink-ng/c/include/pgenlib_misc.cc',
-            'src/plink-ng/c/include/pgenlib_read.cc',
-            'src/plink-ng/c/include/pgenlib_write.cc',
-            'src/plink-ng/c/include/plink2_base.cc',
-            'src/plink-ng/c/include/plink2_bits.cc'
+            'src/plink_ng/pgenlib.pyx',
+            'src/plink_ng/c/pgenlib_ffi_support.cc',
+            'src/plink_ng/c/include/pgenlib_misc.cc',
+            'src/plink_ng/c/include/pgenlib_read.cc',
+            'src/plink_ng/c/include/pgenlib_write.cc',
+            'src/plink_ng/c/include/plink2_base.cc',
+            'src/plink_ng/c/include/plink2_bits.cc'
             ],
         language = "c++",
         # do not compile as c++11, since cython doesn't yet support
@@ -72,7 +72,7 @@ def build(setup_kwargs):
             ),
         }
     )
-    distribution.package_dir = "plink-ng"
+    distribution.package_dir = "plink_ng"
 
     cmd = ExtBuilder(distribution)
     cmd.ensure_finalized()
